@@ -24,8 +24,9 @@
       Date: {{post.date}}
     </p>
     <p>
-      {{post.body}}
+      {{markdown-to-html post.body}}
     </p>
     <button class="pull-right" {{action 'destroyItem' post}}>Delete Post</button>
   </div>
 {{/each}}
+{{markdown-to-html "#Markdown is cool [link](http://emberjs.com)"}}
