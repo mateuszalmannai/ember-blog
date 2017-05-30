@@ -2,14 +2,21 @@
 
 <div class="new-post" width="40">
   <p><b>New Blog Post</b></p>
-  {{textarea value=title cols="52" rows="1" placeholder="Title"}}
-  {{textarea value=author cols="30" rows="1" placeholder="Author"}}
-  <br>
-  {{textarea value=date cols="10" rows="1" placeholder="MM/DD/YYYY"}}
-  {{textarea value=body cols="52" rows="5" placeholder="Body"}}
-  <br>
-  <br>
-  <button class="pull-right" {{action 'createItem'}}>Create</button>
+  <p>
+    {{textarea value=title cols="61" rows="1" placeholder="Title"}}
+  </p>
+  <p>
+    {{textarea value=author cols="61" rows="1" placeholder="Author"}}
+  </p>
+  <p>
+    {{textarea value=date cols="61" rows="1" placeholder="MM/DD/YYYY"}}
+  </p>
+  <p>
+    {{textarea value=body cols="61" rows="5" placeholder="Body"}}
+  </p>
+  <p>
+    <button class="pull-right" {{action 'createItem'}}>Create</button>
+  </p>
 </div>
 
 {{#each model as |post|}}
@@ -21,7 +28,7 @@
       Author: {{post.author}}
     </p>
     <p>
-      Date: {{post.date}}
+      Date: {{moment-format post.date 'L'}}
     </p>
     <p>
       {{markdown-to-html post.body}}

@@ -14,6 +14,9 @@ module.exports = function(environment) {
       storageBucket: "ember-blog-4222b.appspot.com",
       messagingSenderId: "1096579043734"
     },
+    moment: {
+      includeLocales: ['de']
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
