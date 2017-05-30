@@ -1,0 +1,31 @@
+<h1>My Blargh</h1>
+
+<div class="new-post" width="40">
+  <p><b>New Blog Post</b></p>
+  {{textarea value=title cols="52" rows="1" placeholder="Title"}}
+  {{textarea value=author cols="30" rows="1" placeholder="Author"}}
+  <br>
+  {{textarea value=date cols="10" rows="1" placeholder="MM/DD/YYYY"}}
+  {{textarea value=body cols="52" rows="5" placeholder="Body"}}
+  <br>
+  <br>
+  <button class="pull-right" {{action 'createItem'}}>Create</button>
+</div>
+
+{{#each model as |post|}}
+  <div class="post" width="40">
+    <p>
+      <b>{{post.title}}</b>
+    </p>
+    <p>
+      Author: {{post.author}}
+    </p>
+    <p>
+      Date: {{post.date}}
+    </p>
+    <p>
+      {{post.body}}
+    </p>
+    <button class="pull-right" {{action 'destroyItem' post}}>Delete Post</button>
+  </div>
+{{/each}}
